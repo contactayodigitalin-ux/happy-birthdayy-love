@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday sayang ❤️</title>
+  <meta name="description" content="A special romantic birthday greeting just for you">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stars" id="stars-bg"></div>
+
+  <canvas id="hearts-canvas"></canvas>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="shapemyheart.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="music-toggle" class="music-btn" aria-label="Toggle Music" style="position: fixed; bottom: 24px; right: 24px; z-index: 99999; opacity: 1; pointer-events: auto;">
+    <span class="music-icon">🎵</span>
+  </button>
+
+  <section id="section-intro" class="section active">
+    <div class="intro-content">
+      <div class="flower-container" id="flower">
+        <div class="petal-ring outer">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+        <div class="petal-ring inner">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+        <div class="flower-center"></div>
+      </div>
+      <p class="intro-text">Hello Sayang</p>
+      <button id="btn-start" class="btn-glow">Open 💌</button>
+    </div>
+  </section>
+
+  <section id="section-love" class="section">
+    <div class="love-transition-container">
+      </div>
+  </section>
+
+  <section id="section-countdown" class="section">
+    <div class="countdown-container">
+      <div class="countdown-number" id="countdown-display"></div>
+      <div class="age-reveal" id="age-reveal" style="display: none;">
+        <span class="age-number">19</span>
+        <h1>happy birthday sayangg</h1>
+        <p>wishing you endless happiness, success, and beautiful moments ahead✨</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-videos" class="section" style="padding: 0; overflow: hidden; justify-content: space-between;">
+    
+    <div class="videos-header" style="text-align: center; margin-top: 15px; width: 100%; z-index: 20;">
+      <h2 class="section-title" style="text-shadow: 0 2px 10px rgba(255, 77, 115, 0.2);">Our Little Moments</h2>
+    </div>
+
+    <div class="fullscreen-photo-collage">
+      <div class="stacked-photo-collage vid-1" onclick="openCollageLightbox(this)">
+        <img src="photos/photos1.jpg" alt="Our Moment 1">
+      </div>
+      <div class="stacked-photo-collage vid-3" onclick="openCollageLightbox(this)">
+        <img src="photos/photos2.jpg" alt="Our Moment 2">
+      </div>
+      <div class="stacked-photo-collage vid-2" onclick="openCollageLightbox(this)">
+        <img src="photos/photos3.jpg" alt="Our Moment 3">
+      </div>
+      <div class="stacked-photo-collage vid-4" onclick="openCollageLightbox(this)">
+        <img src="photos/photos4.jpg" alt="Our Moment 4">
+      </div>
+      <div class="stacked-photo-collage vid-5" onclick="openCollageLightbox(this)">
+        <img src="photos/photos5.jpg" alt="Our Moment 5">
+      </div>
+    </div>
+    
+    <div class="videos-footer" style="margin-bottom: 25px; z-index: 20; width: 100%; display: flex; justify-content: center;">
+      <button class="btn-next" id="btn-after-videos" style="margin-top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); color: var(--rose); border-color: var(--rose);">Next ➡️</button>
+    </div>
+
+    <div id="collage-lightbox" class="collage-lightbox" onclick="closeCollageLightbox()">
+      <button class="collage-lightbox-close" onclick="closeCollageLightbox()">&times;</button>
+      <div class="collage-lightbox-wrapper">
+        <img id="collage-lightbox-img" src="" alt="Full Screen View">
+      </div>
+    </div>
+  </section>
+
+<section id="section-stack" class="section">
+  <h2 class="section-title">My Favorite Boy 💖</h2>
+  <p class="section-subtitle">Every photo is my favorite 📸</p>
+
+ <div class="photo-stack-container" id="photo-stack">
+
+  <div class="stacked-photo" style="--rotate: -6deg; z-index: 5;">
+    <img src="photos/photos11.jpg" alt="Photo 1">
+    <p class="stacked-caption">my lovely boy🫶</p>
+  </div>
+
+  <div class="stacked-photo" style="--rotate: 4deg; z-index: 4;">
+    <img src="photos/photos7.jpg" alt="Photo 2">
+    <p class="stacked-caption">us being cute as always 🤍</p>
+  </div>
+
+  <div class="stacked-photo" style="--rotate: -3deg; z-index: 3;">
+    <img src="photos/photos8.jpg" alt="Photo 3">
+    <p class="stacked-caption">one of my favorite moments 🌷</p>
+  </div>
+
+  <div class="stacked-photo" style="--rotate: 5deg; z-index: 2;">
+    <img src="photos/photos9.jpg" alt="Photo 4">
+    <p class="stacked-caption">>just us being us 🫶</p>
+  </div>
+
+  <div class="stacked-photo" style="--rotate: -2deg; z-index: 1;">
+    <img src="photos/photos10.jpg" alt="Photo 5">
+    <p class="stacked-caption">a memory i'll always keep 💗</p>
+  </div>
+
+</div>
+
+  <button class="btn-next" id="btn-after-stack">Next ➡️</button>
+</section>
+
+  <section id="section-cake-letter" class="section">
+    <div class="cake-split-container">
+      <div class="cake-photo-card polaroid" style="--rotate: -2deg">
+        <div class="polaroid-img">
+          <img src="photos/photos6.jpg" alt="Birthday Boy 💕">
+        </div>
+        <p class="polaroid-caption">Happy Birthday, sayanggg”! 🎉</p>
+      </div>
+
+      <div class="cake-interactive-side glass-panel">
+        <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 5px;">Blow the Candles! 🕯️</h2>
+        <p class="section-subtitle" style="font-size: 0.85rem; margin-bottom: 15px;">Click on the candles to blow them out...</p>
+        
+        <div class="cake-wrapper" style="margin: 10px 0;">
+          <div class="cake">
+            <div class="candles" id="candles-container">
+              <div class="candle" data-index="0">
+                <div class="flame-container">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle" data-index="1">
+                <div class="flame-container">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle" data-index="2">
+                <div class="flame-container">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle" data-index="3">
+                <div class="flame-container">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle" data-index="4">
+                <div class="flame-container">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle-stick"></div>
+              </div>
+            </div>
+            <div class="cake-top"></div>
+            <div class="cake-middle"></div>
+            <div class="cake-bottom"></div>
+          </div>
+        </div>
+
+        <div class="cake-message" id="cake-message" style="display: none; margin-top: 15px;">
+          <h2 style="font-size: 1.6rem;">Make a Wish! 🌟</h2>
+        </div>
+
+        <div class="letter-body-wrapper" style="margin-top: 15px; text-align: left;">
+          <div class="letter-body" id="typewriter-target" style="min-height: 120px; font-size: 0.95rem;"></div>
+          <div class="letter-signature" id="letter-signature" style="margin-top: 15px;">
+            <p style="font-size: 0.85rem;">With all my love,</p>
+            <p class="signature-name" style="font-size: 1.3rem;">— The one who adores you ❤️</p>
+          </div>
+        </div>
+        
+        <button class="btn-next" id="btn-after-cake-letter" style="margin-top: 15px; opacity: 0; pointer-events: none; transition: opacity 0.6s;">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+<section id="section-polaroid" class="section">
+  <h2 class="section-title">Our Gallery 🫶</h2>
+  <p class="section-subtitle">click a photo to enlarge...</p>
+
+  <div class="polaroid-grid" id="gallery-grid">
+
+    <div class="polaroid" style="--rotate: -2deg" data-index="0">
+      <div class="polaroid-img">
+        <img src="photos/photos1.jpg" alt="Photo 1">
+      </div>
+      <p class="polaroid-caption">ur so handsome bumpyy🤍</p>
+    </div>
+
+    <div class="polaroid" style="--rotate: 3deg" data-index="1">
+      <div class="polaroid-img">
+        <img src="photos/photos5.jpg" alt="Photo 2">
+      </div>
+      <p class="polaroid-caption">another cute fotbar ahahaha 📸</p>
+    </div>
+
+    <div class="polaroid" style="--rotate: -3deg" data-index="2">
+      <div class="polaroid-img">
+        <img src="photos/photos10.jpg" alt="Photo 3">
+      </div>
+      <p class="polaroid-caption">Me and My favorite Boy 🫶</p>
+    </div>
+
+  </div>
+
+  <button class="btn-next" id="btn-after-polaroid">Next ➡️</button>
+</section>
+
+  <section id="section-special-video" class="section">
+    <div class="special-video-container glass-panel">
+      <div class="special-video-wrapper">
+        <video src="videos/vid.mp4" controls playsinline></video>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-after-special-video" style="margin-top: 25px;">Next ➡️</button>
+  </section>
+
+  <section id="section-wish" class="section">
+    <div class="wish-container">
+      <h2>🏮 Write Your Wish</h2>
+      <p>Make a wish for this year, then release it into the night sky...</p>
+      <textarea id="wish-input" placeholder="I wish that..." maxlength="200"></textarea>
+      <button class="btn-glow" id="btn-wish">Send Wish 🏮</button>
+
+      <div class="lantern" id="lantern" style="display: none;">
+        <div class="lantern-body">
+          <p class="lantern-text" id="lantern-text"></p>
+        </div>
+      </div>
+
+      <div class="final-message" id="final-message" style="display: none;">
+        <h2>May all your wishes come true 🌟</h2>
+        <p class="great-vibes">Happy Birthday, Sayang 💕</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next">›</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <script>
+    // Fungsi Manajemen Lightbox Kolase Foto
+    function openCollageLightbox(element) {
+      const imgSrc = element.querySelector('img').src;
+      document.getElementById('collage-lightbox-img').src = imgSrc;
+      document.getElementById('collage-lightbox').classList.add('open');
+    }
+
+    function closeCollageLightbox() {
+      document.getElementById('collage-lightbox').classList.remove('open');
+    }
+
+    // Manajemen Pemutaran Audio & Kontrol Speaker Musik
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnStart = document.getElementById("btn-start");
+      const bgMusic = document.getElementById("bg-music");
+      const musicToggle = document.getElementById("music-toggle");
+
+      // Pastikan elemen dasar ditemukan di dalam DOM
+      if (btnStart && bgMusic) {
+        
+        // Aksi Otomatis Pemutaran saat Tombol Open Klik
+        btnStart.addEventListener("click", function () {
+          bgMusic.play().then(() => {
+            if (musicToggle) {
+              musicToggle.classList.add("playing"); // Jalankan efek animasi berputar
+            }
+          }).catch(error => {
+            console.log("Audio playback failed or was blocked by browser restrictions:", error);
+          });
+        });
+
+        // Kontrol Manual Menggunakan Tombol Speaker di Kanan Bawah
+        if (musicToggle) {
+          musicToggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // Mencegah konflik event bubbling
+            if (bgMusic.paused) {
+              bgMusic.play();
+              musicToggle.classList.add("playing");
+            } else {
+              bgMusic.pause();
+              musicToggle.classList.remove("playing");
+            }
+          });
+        }
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
